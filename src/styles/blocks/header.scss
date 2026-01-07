@@ -1,0 +1,94 @@
+@mixin hover($property, $toValue) {
+  transition: $property 0.3s;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+:root {
+  --moyo-color: #00acdc;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  &__logo-i {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  display: flex;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    position: relative;
+
+    display: block;
+
+    height: 60px;
+
+    line-height: 60px;
+    color: #060b35;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    transition: transform 0.3s;
+
+    @include hover(color, var(--moyo-color));
+
+    &.is-active {
+      position: relative;
+      color: var(--moyo-color);
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        top: 56px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 37px;
+        height: 4px;
+        border-radius: 8px;
+
+        background-color: var(--moyo-color);
+      }
+    }
+  }
+}
+
+/* .nav_item {
+  display: inline;
+  list-style: none;
+} */
