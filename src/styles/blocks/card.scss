@@ -1,12 +1,12 @@
 @use '../variables/variables.scss' as vars;
 
 @mixin hover($property, $toValue) {
-  transition: $property 0.3s;
+  transition: $property 0.3s, color 0.3s;
 
   &:hover {
     #{$property}: $toValue;
     .card__title {
-      color: #34568b;
+      color: vars.$color-card-title-hover;
     }
   }
 }
@@ -134,7 +134,6 @@
     text-decoration: none;
     color: vars.$color-background;
 
-    transition: transform 0.3s;
 
     @include hover-button(background-color, #fff);
   }

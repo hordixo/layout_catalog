@@ -3,11 +3,11 @@
 .stars {
   display: flex;
   align-items: center;
+  gap: vars.$gap-stars
 
   &__star {
     height: vars.$star-size;
     width: vars.$star-size;
-    margin-right: vars.$gap-stars;
     background-image: url(../images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -23,7 +23,4 @@
     }
   }
 
-  &__star:last-child {
-    margin-right: 0;
-  }
 }

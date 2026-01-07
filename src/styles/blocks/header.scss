@@ -1,3 +1,5 @@
+@use '../variables/variables.scss' as vars;
+
 @mixin hover($property, $toValue) {
   transition: $property 0.3s;
 
@@ -10,14 +12,7 @@
   --moyo-color: #00acdc;
 }
 
-body {
-  font-family: Roboto, sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 15px;
-  margin: 0;
-  padding: 0;
-}
+
 
 .header {
   display: flex;
@@ -52,16 +47,14 @@ body {
 
     display: block;
 
-    height: 60px;
+    height: vars.$nav-link-height;
 
-    line-height: 60px;
-    color: #060b35;
+    line-height: vars.$nav-link-height;
+    color: vars.$color-text-primary;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     white-space: nowrap;
-
-    transition: transform 0.3s;
 
     @include hover(color, var(--moyo-color));
 
@@ -87,8 +80,3 @@ body {
     }
   }
 }
-
-/* .nav_item {
-  display: inline;
-  list-style: none;
-} */
