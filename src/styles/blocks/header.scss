@@ -8,12 +8,6 @@
   }
 }
 
-:root {
-  --moyo-color: #00acdc;
-}
-
-
-
 .header {
   display: flex;
   align-items: center;
@@ -56,18 +50,17 @@
     text-transform: uppercase;
     white-space: nowrap;
 
-    @include hover(color, var(--moyo-color));
+    @include hover(color, vars.$color-accent);
 
     &.is-active {
       position: relative;
-      color: var(--moyo-color);
+      color: vars.$color-accent;
 
       &::after {
         content: '';
 
         position: absolute;
         top: 56px;
-        bottom: 0;
         left: 50%;
         transform: translateX(-50%);
 
@@ -75,7 +68,7 @@
         height: 4px;
         border-radius: 8px;
 
-        background-color: var(--moyo-color);
+        background-color: vars.$color-accent;
       }
     }
   }
